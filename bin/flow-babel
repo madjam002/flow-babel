@@ -1,3 +1,9 @@
 #!/usr/bin/env node
 
+if (process.argv[2] === 'babel-server') {
+  // don't proxy to flow, start server.
+  require('../lib/server')
+  return
+}
+
 require('../lib/cli')

@@ -9,6 +9,8 @@ const commandsWithStdin = [
   'autocomplete',
 ]
 
+const command = process.argv[2]
+
 // find working flow directory and pass it to server
 const workingDir = findParentDir.sync(process.cwd() + '/', '.flowconfig')
 
@@ -19,7 +21,7 @@ if (workingDir == null) {
 
 // stdin?
 let stdin = null
-if (commandsWithStdin.indexOf(process.argv[2]) !== -1) {
+if (commandsWithStdin.indexOf(command) !== -1) {
   stdin = fs.readFileSync('/dev/stdin').toString()
 }
 
