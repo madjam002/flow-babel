@@ -1,0 +1,31 @@
+{
+  "name": "flow-babel",
+  "version": "0.0.1",
+  "description": "A proxy for flow which allows you to run it against babel",
+  "main": "lib/server.js",
+  "options": {
+    "babel": "--stage 0 --ignore __tests__ --out-dir lib/ src/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf lib/ && babel $npm_package_options_babel",
+    "watch": "rm -rf lib/ && babel --watch $npm_package_options_babel",
+    "prepublish": "npm run build",
+    "install": "if [ -d \"./src\" ]; then npm run prepublish; fi"
+  },
+  "author": "Jamie Greeff <jamiegreeff+git@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^5.8.21",
+    "babel-runtime": "^5.8.20",
+    "find-parent-dir": "^0.3.0",
+    "md5": "^2.0.0",
+    "minimist": "^1.2.0",
+    "nssocket": "^0.5.3",
+    "source-map": "^0.4.4",
+    "source-map-url": "^0.3.0"
+  },
+  "bin": {
+    "flow-babel": "./bin/flow-babel"
+  }
+}
