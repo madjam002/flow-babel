@@ -13,6 +13,10 @@
     "prepublish": "npm run build",
     "install": "if [ -d \"./src\" ]; then npm run prepublish; fi"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/madjam002/flow-babel.git"
+  },
   "author": "Jamie Greeff <jamiegreeff+git@gmail.com>",
   "license": "MIT",
   "dependencies": {
