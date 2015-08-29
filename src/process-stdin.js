@@ -17,6 +17,8 @@ export default function processStdin(workingDir, stdin, argv, args) {
       plugins = babelrcParsed.plugins.map(pluginName => pluginName)
     }
 
+    plugins.push(path.join(__dirname, '/babel-plugin.js'))
+
     const oldCwd = process.cwd()
     process.chdir(workingDir)
     let stdinTransformed = null

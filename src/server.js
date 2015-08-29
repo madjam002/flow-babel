@@ -51,6 +51,8 @@ const babelCmd = spawn('babel', [
   'runtime',
   '--ignore',
   'node_modules',
+  '--plugins',
+  path.join(__dirname, '/babel-plugin.js'),
   '--watch',
   '--out-dir',
   targetDir,
